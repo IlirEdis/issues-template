@@ -1,19 +1,13 @@
 "use client";
 
 import { useContext, useEffect, useRef, useState } from "react";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { HeaderMenu } from "../data/Menu";
 import HeaderMobile from "./HeaderMobile";
-import IconSearch from "./icons/IconSearch";
-import { SorryAppNotices } from "./SorryAppNotices";
-import IconExternalLink from "./icons/IconExternalLink";
 import { AppContext } from "./AppContext";
 import { usePathname } from "next/navigation";
-import Button from "./Button";
-import Edbb_Logo from "./Edbb_Logo";
 
 const Underline = () => (
   <motion.div
@@ -49,7 +43,7 @@ export default function Header({ infoBannerData, sorryData }: any) {
       <div className='w-[100%] flex justify-between items-center gap-[30px] '>
         <Link href='/' className='block w-[150px] md:w-[220px]'>
           {/* <Logo color='secondary' /> */}
-          <Edbb_Logo color='secondary' />
+          <h3>Logo</h3>
         </Link>
         <div className='hidden md:block w-[2px] h-[100%] bg-gray-200'></div>
         <div className='w-[100%] hidden md:flex justify-between items-center '>
@@ -79,48 +73,6 @@ export default function Header({ infoBannerData, sorryData }: any) {
               );
             })}
           </motion.nav>
-
-          <div className='flex items-center gap-[20px]'>
-            <SorryAppNotices sorryData={sorryData} />
-
-            <Link href='/#server-locations'>
-              <Button
-                text='Get Started'
-                variant='contained'
-                color='primary'
-                role='button'
-                aria-label='Get Started button'
-              />
-            </Link>
-            <Link
-              href='https://www.edis.guide/l/en'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Button
-                text='Docs'
-                variant='outlined'
-                color='primary'
-                endIcon={<IconExternalLink width='14px' color='primary' />}
-                role='button'
-                aria-label='Docs button'
-              />
-            </Link>
-            <Link
-              href='https://manage.edis.at/whmcs/clientarea.php'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Button
-                text='Log in'
-                variant='outlined'
-                color='primary'
-                endIcon={<IconExternalLink width='14px' color='primary' />}
-                role='button'
-                aria-label='Login button'
-              />
-            </Link>
-          </div>
         </div>
       </div>
       <HeaderMobile sorryData={sorryData} />

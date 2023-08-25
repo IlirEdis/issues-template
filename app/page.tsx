@@ -15,7 +15,6 @@ export default async function Home() {
 
   const continents = data.continents.data;
 
-  // console.log("DATAAA", data.serverLocations.data);
   return (
     <main className='min-h-[100vh]'>
       <Hero continents={continents} />

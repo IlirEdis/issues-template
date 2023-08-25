@@ -10,7 +10,6 @@ import IconArrowRight from "./icons/IconArrowRight";
 // import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import IconSearch from "./icons/IconSearch";
-import { SorryAppNotices } from "./SorryAppNotices";
 import IconExternalLink from "./icons/IconExternalLink";
 import Button from "./Button";
 import IconButton from "./IconButton";
@@ -301,8 +300,6 @@ export default function HeaderMobile({ sorryData }: any) {
       <IconButton aria-label='Serach button'>
         <IconSearch width='23px' color={"red"} />
       </IconButton>
-
-      <SorryAppNotices sorryData={sorryData} />
 
       <MenuButton onClick={toggleDropdown} isOpen={isOpen} />
 
